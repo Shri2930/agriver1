@@ -54,7 +54,7 @@ const ContactSection: React.FC = () => {
     <section id="contact" className="py-20 bg-green-900 text-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold">Contact Us</h2>
+          <h2 className="text-3xl md:text-4xl font-bold">CONTACT US</h2>
           <div className="w-24 h-1 bg-green-500 mx-auto mt-4 mb-6"></div>
           <p className="text-lg text-green-100 max-w-3xl mx-auto">
             Let's discuss how we can work together to create sustainable solutions for your organization.
@@ -64,62 +64,63 @@ const ContactSection: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Map and Contact Info */}
           <div>
-            <div className="h-64 bg-green-800 rounded-xl mb-8 overflow-hidden relative">
-              {/* Map placeholder - would be replaced with actual map */}
+            <div className="h-64 bg-gradient-to-br from-green-400 via-green-100 to-green-100 rounded-xl mb-8 overflow-hidden relative shadow-2xl shadow-green-400/70 border-4 border-green-400">
               <img 
-                src="https://images.pexels.com/photos/2245432/pexels-photo-2245432.jpeg" 
-                alt="Map of London" 
-                className="w-full h-full object-cover opacity-60"
+                src="https://ik.imagekit.io/ah8oempfj/18255.jpg?updatedAt=1747643541939" 
+                alt="Farm land"
+                className="w-full h-full object-cover opacity-90 rounded-xl shadow-2xl shadow-green-400/80 border-4 border-green-300 transition-all duration-500 hover:scale-105 hover:shadow-green-300 animate-fade-in"
+                style={{ fontWeight: 'bold' }}
               />
+              {/* Decorative gradient overlay for extra color and glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-green-500/30 via-transparent to-green-300/20 pointer-events-none rounded-xl"></div>
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="bg-green-800/90 px-4 py-3 rounded-lg text-center">
-                  <h3 className="font-semibold mb-1">Global Headquarters</h3>
-                  <p className="text-green-100">London, United Kingdom</p>
+                <div className="bg-green-800/90 px-6 py-4 rounded-lg text-center shadow-xl border-2 border-green-400">
+                  <h3 className="font-bold text-white text-lg mb-1 drop-shadow-lg">Global Headquarters</h3>
+                  <p className="text-green-100 font-semibold drop-shadow">London, United Kingdom</p>
                 </div>
               </div>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-green-800 rounded-xl p-6">
+              <div className="border-2 border-green-400 rounded-xl shadow-lg shadow-green-200 hover:shadow-green-400 transition-all duration-300 hover:scale-105 animate-fade-in p-6">
                 <div className="flex items-start">
                   <div className="bg-green-700 rounded-full p-3 mr-4">
                     <MapPin className="h-6 w-6 text-green-100" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Address</h3>
-                    <p className="text-green-100">123 Sustainability Road</p>
-                    <p className="text-green-100">London, UK EC1A 1BB</p>
+                    <h3 className="text-lg font-semibold mb-2">ADDRESS</h3>
+                    <p className="text-green-100"> 167-169 Great Portland Street</p>
+                    <p className="text-green-100"> 5th Floor, London, England, W1W 5PF</p>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-green-800 rounded-xl p-6">
+              <div className="border-2 border-green-400 rounded-xl shadow-lg shadow-green-200 hover:shadow-green-400 transition-all duration-300 hover:scale-105 animate-fade-in p-6">
                 <div className="flex items-start">
                   <div className="bg-green-700 rounded-full p-3 mr-4">
                     <Mail className="h-6 w-6 text-green-100" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold mb-2">Email</h3>
-                    <p className="text-green-100 ">info@agribiofuels.com</p>
-                    <p className="text-green-100">partnerships@agribiofuels.com</p>
+                    <h3 className="text-lg font-semibold mb-2">EMAIL</h3>
+                    <p className="text-green-100 break-all text-sm">info@agribiofuels.com</p>
+                    <p className="text-green-100 break-all text-sm">partnerships@agribiofuels.com</p>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-green-800 rounded-xl p-6">
+              <div className="border-2 border-green-400 rounded-xl shadow-lg shadow-green-200 hover:shadow-green-400 transition-all duration-300 hover:scale-105 animate-fade-in p-6">
                 <div className="flex items-start">
                   <div className="bg-green-700 rounded-full p-3 mr-4">
                     <Phone className="h-6 w-6 text-green-100" />
                   </div>
                   <div>
-                
                     <p className="text-green-100">Mon-Fri, 9AM-5PM GMT</p>
                   </div>
                 </div>
               </div>
               
-              <div className="bg-green-800 rounded-xl p-6">
-                <h3 className="text-lg font-semibold mb-2">Regional Offices</h3>
+              <div className="border-2 border-green-400 rounded-xl shadow-lg shadow-green-200 hover:shadow-green-400 transition-all duration-300 hover:scale-105 animate-fade-in p-6">
+                <h3 className="text-lg font-semibold mb-2">REGIONAL OFFICES</h3>
                 <ul className="space-y-2 text-green-100">
                   <li>Jakarta, Indonesia</li>
                   <li>Nairobi, Kenya</li>
@@ -130,16 +131,18 @@ const ContactSection: React.FC = () => {
           </div>
           
           {/* Contact Form */}
-          <div className="bg-white text-gray-800 rounded-xl shadow-xl overflow-hidden">
+          <div className="bg-gradient-to-br from-white via-green-50 to-green-100 text-gray-800 rounded-2xl shadow-2xl border border-green-200 overflow-hidden p-8 relative">
+            {/* Accent bar */}
+            <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-green-500 via-green-400 to-green-600 rounded-t-2xl"></div>
             {/* Form Tabs */}
-            <div className="flex border-b border-gray-200">
+            <div className="flex border-b border-gray-200 mb-6 pt-2">
               {['general', 'investor', 'partner', 'farmer'].map((tab) => (
                 <button
                   key={tab}
-                  className={`flex-1 py-3 px-4 text-sm font-medium text-center transition-colors ${
+                  className={`flex-1 py-3 px-4 text-sm font-semibold text-center transition-colors rounded-t-lg ${
                     activeTab === tab
-                      ? 'bg-green-50 text-green-700 border-b-2 border-green-700'
-                      : 'text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                      ? 'bg-green-100 text-green-700 border-b-2 border-green-600 shadow'
+                      : 'text-gray-500 hover:text-green-700 hover:bg-green-50'
                   }`}
                   onClick={() => setActiveTab(tab)}
                 >
@@ -147,9 +150,8 @@ const ContactSection: React.FC = () => {
                 </button>
               ))}
             </div>
-            
             {/* Form Content */}
-            <div className="p-6">
+            <div className="p-2">
               {formSubmitted ? (
                 <div className="flex flex-col items-center justify-center py-8">
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">
@@ -164,7 +166,7 @@ const ContactSection: React.FC = () => {
                 <form onSubmit={handleSubmit}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="name" className="block text-sm font-medium text-green-700 mb-1">
                         Name *
                       </label>
                       <input
@@ -174,12 +176,11 @@ const ContactSection: React.FC = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full px-3 py-2 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white transition"
                       />
                     </div>
-                    
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="email" className="block text-sm font-medium text-green-700 mb-1">
                         Email *
                       </label>
                       <input
@@ -189,12 +190,11 @@ const ContactSection: React.FC = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full px-3 py-2 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white transition"
                       />
                     </div>
-                    
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="phone" className="block text-sm font-medium text-green-700 mb-1">
                         Phone
                       </label>
                       <input
@@ -203,12 +203,11 @@ const ContactSection: React.FC = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full px-3 py-2 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white transition"
                       />
                     </div>
-                    
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
+                      <label htmlFor="company" className="block text-sm font-medium text-green-700 mb-1">
                         Company/Organization
                       </label>
                       <input
@@ -217,13 +216,12 @@ const ContactSection: React.FC = () => {
                         name="company"
                         value={formData.company}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                        className="w-full px-3 py-2 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white transition"
                       />
                     </div>
                   </div>
-                  
                   <div className="mb-4">
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    <label htmlFor="message" className="block text-sm font-medium text-green-700 mb-1">
                       Message *
                     </label>
                     <textarea
@@ -233,10 +231,9 @@ const ContactSection: React.FC = () => {
                       onChange={handleInputChange}
                       required
                       rows={5}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+                      className="w-full px-3 py-2 border border-green-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-400 bg-white transition"
                     />
                   </div>
-                  
                   <div className="flex items-center mb-6">
                     <input
                       type="checkbox"
@@ -244,20 +241,19 @@ const ContactSection: React.FC = () => {
                       name="newsletter"
                       checked={formData.newsletter}
                       onChange={handleCheckboxChange}
-                      className="h-4 w-4 text-green-600 border-gray-300 rounded focus:ring-green-500"
+                      className="h-4 w-4 text-green-600 border-green-300 rounded focus:ring-green-400"
                     />
                     <label htmlFor="newsletter" className="ml-2 text-sm text-gray-600">
                       Subscribe to our newsletter for updates on sustainable fuel innovations
                     </label>
                   </div>
-                  
                   <Button
                     type="submit"
                     variant="primary"
                     size="full"
                     icon={<Send size={18} />}
                   >
-                    Send Message
+                    SEND MESSAGE
                   </Button>
                 </form>
               )}

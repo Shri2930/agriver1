@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Calendar, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -41,10 +42,13 @@ const ImplementationSection: React.FC = () => {
   ];
 
   return (
-    <section id="implementation" className="py-20 bg-gray-50">
+    <section
+      id="implementation"
+      className="py-20 bg-gradient-to-br from-green-50 via-white to-green-100"
+    >
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Implementation Model</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">IMPLEMENTATION MODEL</h2>
           <div className="w-24 h-1 bg-green-600 mx-auto mt-4 mb-6"></div>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Our proven phased approach ensures sustainable growth and maximizes impact across stakeholder groups.
@@ -52,26 +56,30 @@ const ImplementationSection: React.FC = () => {
         </div>
         
         <div className="relative max-w-4xl mx-auto">
-          {/* Timeline line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-green-200 z-0"></div>
+          {/* Timeline line with glow */}
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-1 bg-green-300 z-0 shadow-[0_0_24px_4px_rgba(34,197,94,0.3)]"></div>
           
           {/* Timeline periods */}
           {timelineData.map((period, index) => (
             <div key={index} className="relative z-10 mb-12">
               <div className="flex flex-col md:flex-row items-start md:items-center">
-                {/* Timeline dot */}
-                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-8 h-8 rounded-full bg-green-600 border-4 border-white flex items-center justify-center">
-                  <Calendar size={14} className="text-white" />
+                {/* Timeline dot with glow */}
+                <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 w-10 h-10 rounded-full bg-green-600 border-4 border-white flex items-center justify-center shadow-[0_0_16px_4px_rgba(34,197,94,0.5)]">
+                  <Calendar size={16} className="text-white" />
                 </div>
                 
                 {/* Content */}
-                <div className={`ml-12 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}>
-                  <div className={`bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 ${
-                    openAccordion === index ? 'transform scale-105' : ''
+                <div className={`ml-14 md:ml-0 md:w-1/2 ${index % 2 === 0 ? 'md:pr-12 md:text-right' : 'md:pl-12 md:ml-auto'}`}>
+                  <div className={`rounded-xl shadow-2xl overflow-hidden transition-all duration-300 ${
+                    openAccordion === index
+                      ? 'transform scale-105 bg-white shadow-[0_0_32px_8px_rgba(34,197,94,0.3)]'
+                      : 'bg-white'
                   }`}>
                     <div 
                       className={`px-6 py-4 cursor-pointer flex justify-between items-center ${
-                        openAccordion === index ? 'bg-green-700 text-white' : 'bg-white'
+                        openAccordion === index 
+                          ? 'bg-green-600 text-white' // Changed to green-600 with white text for better contrast
+                          : 'bg-gray-50 text-green-800 hover:bg-green-100 hover:text-green-900 transition-colors'
                       }`}
                       onClick={() => setOpenAccordion(openAccordion === index ? null : index)}
                     >
@@ -84,17 +92,17 @@ const ImplementationSection: React.FC = () => {
                         </div>
                       </div>
                       {openAccordion === index ? 
-                        <ChevronUp className={`h-5 w-5 ${openAccordion === index ? 'text-white' : 'text-green-600'}`} /> :
+                        <ChevronUp className="h-5 w-5 text-white" /> :
                         <ChevronDown className={`h-5 w-5 ${openAccordion === index ? 'text-white' : 'text-green-600'}`} />
                       }
                     </div>
                     
                     {openAccordion === index && (
-                      <div className="px-6 py-4">
+                      <div className="px-6 py-4 bg-white">
                         <ul className="space-y-2 mb-4">
                           {period.content.map((item, i) => (
                             <li key={i} className="flex items-start">
-                              <div className="h-5 w-5 rounded-full bg-green-100 text-green-700 flex items-center justify-center flex-shrink-0 mt-0.5">
+                              <div className="h-5 w-5 rounded-full bg-green-100 text-green-700 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-[0_0_8px_2px_rgba(34,197,94,0.3)]">
                                 <span className="text-xs font-bold">{i + 1}</span>
                               </div>
                               <span className="ml-2 text-gray-700">{item}</span>
@@ -123,12 +131,12 @@ const ImplementationSection: React.FC = () => {
               alt="Global terrain map" 
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 bg-black/10"></div>
             
             {/* Hotspots - simplified implementation */}
             <div className="absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center animate-ping absolute"></div>
-              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center relative z-10">
+              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center animate-ping absolute shadow-[0_0_12px_4px_rgba(34,197,94,0.5)]"></div>
+              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center relative z-10 shadow-[0_0_12px_4px_rgba(34,197,94,0.5)]">
                 1
               </div>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-black/70 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
@@ -137,8 +145,8 @@ const ImplementationSection: React.FC = () => {
             </div>
             
             <div className="absolute top-1/3 left-2/3 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center animate-ping absolute"></div>
-              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center relative z-10">
+              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center animate-ping absolute shadow-[0_0_12px_4px_rgba(34,197,94,0.5)]"></div>
+              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center relative z-10 shadow-[0_0_12px_4px_rgba(34,197,94,0.5)]">
                 2
               </div>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-black/70 text-white text-xs py-1 px-2 rounded whitespace-nowrap">
@@ -147,8 +155,8 @@ const ImplementationSection: React.FC = () => {
             </div>
             
             <div className="absolute top-2/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center animate-ping absolute"></div>
-              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center relative z-10">
+              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center animate-ping absolute shadow-[0_0_12px_4px_rgba(34,197,94,0.5)]"></div>
+              <div className="bg-green-600 text-white text-xs rounded-full h-6 w-6 flex items-center justify-center relative z-10 shadow-[0_0_12px_4px_rgba(34,197,94,0.5)]">
                 3
               </div>
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 bg-black/70 text-white text-xs py-1 px-2 rounded whitespace-nowrap">

@@ -23,7 +23,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onPartnerClic
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex(prevIndex => (prevIndex + 1) % backgroundImages.length);
-    }, 2000); // Change every 2 seconds
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -31,13 +31,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onPartnerClic
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-16 transition-all duration-3000 ease-in-out"
-      style={{
-        backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      className="relative min-h-screen w-full flex items-center pt-16 overflow-hidden"
     >
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-1000 ease-in-out"
+        style={{
+          backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
+        }}
+      />
+
       {/* Dark Overlay */}
       <div className="absolute inset-0 bg-black/50 z-10" />
 
@@ -54,12 +57,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onPartnerClic
             <span className="text-green-400">Empowering Sustainable Agriculture.</span>
           </h1>
 
-          <div className="flex space-x-4">
-            <Button onClick={onExploreClick}>
+          <div className="flex flex-wrap gap-4">
+            <Button onClick={onExploreClick} className="flex items-center">
               Explore Solutions
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <Button onClick={onPartnerClick}>
+            <Button onClick={onPartnerClick} className="flex items-center">
               Become a Partner
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
@@ -68,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onExploreClick, onPartnerClic
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/80 animate-bounce z-20">
+      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white/80 animate-bounce z-30">
         <div className="text-sm font-medium mb-2">Scroll to explore</div>
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

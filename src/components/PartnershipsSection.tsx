@@ -47,7 +47,7 @@ const PartnershipsSection: React.FC = () => {
     },
     { 
       name: "Carbon Trust Standard", 
-      logo: "https://ik.imagekit.io/qcf813yjh/images_q=tbn:ANd9GcSIUzQNszw_Ttl_rkjtK0_ui65SSIlh-ToPlw&s"
+      logo: "https://ik.imagekit.io/sc8yurdyd/imgbin_6f6b30c171a097b5bdb32179262934f3-removebg-preview.png?updatedAt=1747660599097"
     },
     { 
       name: "Sustainable Biomass Program", 
@@ -100,9 +100,9 @@ const PartnershipsSection: React.FC = () => {
     <section id="partners" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Partnerships & Certifications</h2>
-          <div className="w-24 h-1 bg-green-600 mx-auto mt-4 mb-6"></div>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">PARTNERSHIP & CERTIFICATIONS</h2>
+          <div className="w-24 h-1 bg-green-800 mx-auto mt-4 mb-6"></div>
+          <p className="text-lg text-gray-900 max-w-3xl mx-auto">
             We collaborate with industry leaders in aviation, maritime shipping, agriculture, and sustainability.
           </p>
         </div>
@@ -110,18 +110,18 @@ const PartnershipsSection: React.FC = () => {
         {/* Partners Carousel */}
         <div className="relative mb-16">
           <div className="flex items-center justify-between mb-6">
-            <h3 className="text-2xl font-semibold text-gray-800">Strategic Partners</h3>
+            <h3 className="text-2xl font-semibold text-gray-800">STRATERGIC PARTNERS</h3>
             <div className="flex space-x-2">
               <button 
                 onClick={() => scrollCarousel('left')}
-                className="p-2 rounded-full bg-white shadow hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-full bg-gray-700 shadow hover:bg-gray-500 transition-colors"
                 aria-label="Scroll left"
               >
                 <ChevronLeft size={20} />
               </button>
               <button 
                 onClick={() => scrollCarousel('right')}
-                className="p-2 rounded-full bg-white shadow hover:bg-gray-100 transition-colors"
+                className="p-2 rounded-full bg-gray-700 shadow hover:bg-gray-500 transition-colors"
                 aria-label="Scroll right"
               >
                 <ChevronRight size={20} />
@@ -155,7 +155,7 @@ const PartnershipsSection: React.FC = () => {
           <div className="mt-8 text-center">
             <Button 
               variant="primary" 
-              icon={<Link size={18} />}
+              icon={<Link size={40} />}
             >
               Join as Strategic Partner
             </Button>
@@ -164,23 +164,26 @@ const PartnershipsSection: React.FC = () => {
         
         {/* Certifications */}
         <div>
-          <h3 className="text-2xl font-semibold text-gray-800 mb-6">Certifications & Standards</h3>
+          <h3 className="text-2xl font-semibold text-gray-800 mb-6">CERTIFICATION & STANDARD</h3>
           
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {certifications.map((cert, index) => (
               <div 
                 key={index}
-                className="certification-badge opacity-0 bg-white rounded-xl shadow p-4 flex flex-col items-center justify-center text-center transform translate-y-10"
+                className="certification-badge opacity-0 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center transform translate-y-10
+                  border-2 border-transparent transition-all duration-500
+                  hover:border-green-700 hover:shadow-green-600/80 hover:shadow-2xl animate-glow
+                  min-h-[360px] py-10"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="h-20 w-20 rounded-full overflow-hidden mb-4">
+                <div className="h-44 w-44 rounded-full overflow-hidden mb-10 border-4 border-white shadow-[0_0_40px_10px_rgba(34,197,94,0.4)] hover:shadow-[0_0_60px_20px_rgba(34,197,94,0.7)] transition-all duration-500 flex items-center justify-center bg-white">
                   <img 
                     src={cert.logo} 
                     alt={cert.name} 
-                    className="w-full h-full object-cover"
+                    className="max-h-40 max-w-40 object-contain drop-shadow-[0_0_20px_rgba(34,197,94,0.5)]"
                   />
                 </div>
-                <h4 className="font-medium text-gray-800 text-sm">{cert.name}</h4>
+                <h4 className="font-semibold text-gray-900 text-lg tracking-wide">{cert.name}</h4>
               </div>
             ))}
           </div>

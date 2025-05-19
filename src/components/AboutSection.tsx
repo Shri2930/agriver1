@@ -213,22 +213,34 @@ const AboutSection: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.2 + idx * 0.2 }}
-                className="group relative"
+                className="relative"
               >
-                <div className="relative rounded-xl overflow-hidden shadow-lg transform transition-transform duration-500 group-hover:scale-105">
+                <div className="relative rounded-xl overflow-hidden shadow-lg">
                   <div className="aspect-video overflow-hidden">
                     <img
                       src={person.image}
                       alt={`${person.name} - ${person.role}`}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  {/* Overlay animates in with the card */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={inView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.4 + idx * 0.2 }}
+                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+                  />
+                  {/* Content animates in with the card */}
+                  <motion.div
+                    initial={{ y: 40, opacity: 0 }}
+                    animate={inView ? { y: 0, opacity: 1 } : {}}
+                    transition={{ duration: 0.6, delay: 0.5 + idx * 0.2 }}
+                    className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                  >
                     <h4 className="text-xl font-bold">{person.name}</h4>
                     <p className="text-green-400 mb-2">{person.role}</p>
                     <p className="text-sm text-gray-200">{person.bio}</p>
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             ))}

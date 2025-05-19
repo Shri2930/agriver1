@@ -1,5 +1,5 @@
 import React from 'react';
-import { Facebook, Twitter, Linkedin, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Twitter, Linkedin, Instagram, Mail,  MapPin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -68,16 +68,16 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-xl font-semibold mb-4">CONTACT US</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin size={20} className="mr-2 mt-1 text-green-400" />
-                <span>123 Sustainability Road, London, UK EC1A 1BB</span>
+                <span>167-169 Great Portland Street, 5th Floor, London, England,W1W,5PF</span>
               </li>
               
               <li className="flex items-center">
                 <Mail size={20} className="mr-2 text-green-400" />
-                <span>info@agribiofuels.com</span>
+                <span>@agri-biofuels.global.</span>
               </li>
             </ul>
           </div>
@@ -89,9 +89,9 @@ const Footer: React.FC = () => {
               &copy; {new Date().getFullYear()} Agri-BioFuels Global Ltd. All rights reserved.
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Privacy Policy</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Terms of Service</a>
-              <a href="#" className="text-gray-400 hover:text-white text-sm">Cookie Policy</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">PRIVACY POLICY</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">TERMS OF SERVICE</a>
+              <a href="#" className="text-gray-400 hover:text-white text-sm">COOKIE POLICY</a>
             </div>
           </div>
         </div>
