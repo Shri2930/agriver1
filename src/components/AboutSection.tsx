@@ -318,7 +318,7 @@ const AboutSection: React.FC = () => {
 
             <p className="text-gray-600 mb-6">
 
-              Founded in 2020 by Ross James and Deependra Mehta, Agri-BioFuels Global emerged from a shared vision to transform agricultural waste into sustainable aviation fuel. Our journey began with a groundbreaking partnership with Licella, whose CAT-HTR technology formed the foundation of our innovative approach.
+              Founded in 2020, Agri-BioFuels Global emerged from a shared vision to transform agricultural waste into sustainable aviation fuel. Our journey began with a groundbreaking partnership with Licella, whose CAT-HTR technology formed the foundation of our innovative approach.
 
             </p>
 
@@ -356,7 +356,7 @@ const AboutSection: React.FC = () => {
 
 
 
-          <div className="flex justify-center max-w-2xl mx-auto">
+          <div className="flex justify-center max-w-4xl mx-auto">
 
             {[
 
@@ -384,11 +384,11 @@ const AboutSection: React.FC = () => {
 
                 transition={{ duration: 0.6, delay: 0.2 + idx * 0.2 }}
 
-                className="relative transition-all duration-300 hover:shadow-[0_0_40px_10px_rgba(34,197,94,0.5)]"
+                className="relative transition-all duration-300 hover:shadow-[0_0_40px_10px_rgba(34,197,94,0.5)] w-full max-w-2xl"
 
               >
 
-                <div className="relative rounded-xl overflow-hidden shadow-lg">
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl">
 
                   <div className="aspect-square overflow-hidden">
 
@@ -414,7 +414,7 @@ const AboutSection: React.FC = () => {
 
                     transition={{ duration: 0.6, delay: 0.4 + idx * 0.2 }}
 
-                    className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"
+                    className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
 
                   />
 
@@ -428,15 +428,15 @@ const AboutSection: React.FC = () => {
 
                     transition={{ duration: 0.6, delay: 0.5 + idx * 0.2 }}
 
-                    className="absolute bottom-0 left-0 right-0 p-6 text-white"
+                    className="absolute bottom-0 left-0 right-0 p-8 text-white"
 
                   >
 
-                    <h4 className="text-xl font-bold">{person.name}</h4>
+                    <h4 className="text-3xl font-bold">{person.name}</h4>
 
-                    <p className="text-green-400 mb-2">{person.role}</p>
+                    <p className="text-green-400 mb-3 text-lg">{person.role}</p>
 
-                    <p className="text-sm text-gray-200">{person.bio}</p>
+                    <p className="text-base text-gray-200">{person.bio}</p>
 
                   </motion.div>
 
