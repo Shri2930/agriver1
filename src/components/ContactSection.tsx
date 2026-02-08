@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, CheckCircle } from 'lucide-react';
 import Button from './ui/Button';
-import { supabase } from '../lib/supabase';
 
 const ContactSection: React.FC = () => {
   const [activeTab, setActiveTab] = useState('general');
   const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -33,28 +30,11 @@ const ContactSection: React.FC = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setError(null);
-
-    try {
-      const { error } = await supabase
-        .from('contact_submissions')
-        .insert([
-          {
-            name: formData.name,
-            email: formData.email,
-            phone: formData.phone,
-            company: formData.company,
-            message: formData.message,
-            newsletter: formData.newsletter,
-            type: activeTab
-          }
-        ]);
-
-      if (error) throw error;
-
+    
+    // Simulate form submission
+    setTimeout(() => {
       setFormSubmitted(true);
       // Reset form after 3 seconds
       setTimeout(() => {
@@ -68,12 +48,7 @@ const ContactSection: React.FC = () => {
           newsletter: false
         });
       }, 3000);
-    } catch (err) {
-      setError('Failed to submit form. Please try again.');
-      console.error('Error submitting form:', err);
-    } finally {
-      setIsSubmitting(false);
-    }
+    }, 1000);
   };
 
   return (
@@ -274,20 +249,13 @@ const ContactSection: React.FC = () => {
                     </label>
                   </div>
                   
-                  {error && (
-                    <div className="mb-4 p-3 bg-red-100 text-red-700 rounded-lg">
-                      {error}
-                    </div>
-                  )}
-                  
                   <Button
                     type="submit"
                     variant="primary"
                     size="full"
                     icon={<Send size={18} />}
-                    disabled={isSubmitting}
                   >
-                    {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
+                    SEND MESSAGE
                   </Button>
                 </form>
               )}
