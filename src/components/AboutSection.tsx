@@ -18,17 +18,11 @@ import {
 
   FireIcon,
 
-  UsersIcon,
-
-  SparklesIcon,
-
-  BuildingOffice2Icon,
+  UsersIcon
 
 } from "@heroicons/react/24/solid";
 
 import RossJamesImg from "../assets/ross-james.jpg";
-
-import DeependraMehtaImg from "../assets/deependra-mehta.jpg";
 
 import AnimatedCounter from './ui/AnimatedCounter';
 
@@ -362,7 +356,7 @@ const AboutSection: React.FC = () => {
 
 
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="flex justify-center max-w-2xl mx-auto">
 
             {[
 
@@ -375,18 +369,6 @@ const AboutSection: React.FC = () => {
                 bio: "With over 20 years in renewable energy, Ross leads our mission to revolutionize sustainable fuel production.",
 
                 image: RossJamesImg
-
-              },
-
-              {
-
-                name: "Deependra Mehta",
-
-                role: "Co-Founder & CTO",
-
-                bio: "A pioneer in biomass conversion technology, Deependra drives our technical innovation and process optimization.",
-
-                image: DeependraMehtaImg
 
               }
 
@@ -408,7 +390,7 @@ const AboutSection: React.FC = () => {
 
                 <div className="relative rounded-xl overflow-hidden shadow-lg">
 
-                  <div className="aspect-video overflow-hidden">
+                  <div className="aspect-square overflow-hidden">
 
                     <img
 
